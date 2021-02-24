@@ -19,7 +19,7 @@ public enum Message {
 	  
 	  M3 {
 	      public String toString() {
-	          return "Edge alreay exists ";
+	          return "Edge already exists";
 	      }
 	  },
 	  

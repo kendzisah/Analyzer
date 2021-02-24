@@ -38,9 +38,13 @@ public class DGraphTest {
     	ArrayList<String> b2 = new ArrayList<String>();
     	b1.add("1"); b1.add("2"); b1.add("3"); 
     	
+    	ArrayList<String> b3 = new ArrayList<String>();
+    	b1.add("1"); b1.add("3"); 
+    	
     	expected.add(b1);
     	expected.add(b2);
-    
+    	expected.add(b3);
+    	
         Assert.assertEquals(bs.size(), expected.size());
      }
 	
