@@ -24,6 +24,12 @@ public class ListDGraph<V> implements DGraph<V>{
       /**
        * TODO: implement the addV function;
        */
+    	if(!v.equals(null))
+    	{
+    		this.vList.add(v);;
+    		return 1;
+    	}
+    	System.out.println("M2");
         return -1;
     }
 

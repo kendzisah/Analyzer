@@ -43,7 +43,22 @@ public class Vertex<V> {
        /**
         * TODO: add an edge to the edge list;
         */
-    	return false;
+    	
+    	if(e.getSource() != this.v)
+    	{
+    		System.out.println("M5");
+    		return false;
+    	}
+    	else if(this.edgeList.contains(e))
+    	{
+    		System.out.println("M3");
+    		return false;
+    	}
+    	else {
+    		this.edgeList.add(e);
+    		return true;
+    	}
+    	
     }
     
     /**
@@ -57,7 +72,27 @@ public class Vertex<V> {
     	/**
          * TODO: get the edge between this vertex and the destination V "dest";
          */
-     	return null;
+    	
+    	for(int i = 0; i < this.edgeList.size(); i++)
+    	{
+    		Edge<V> tempEdge = this.edgeList.get(i);
+    		if(tempEdge.getDest().equals(dest))
+    		{
+    			return tempEdge;
+    		}
+    		
+    	}
+    	if(dest.equals(null))
+    	{
+    		System.out.println("M5");
+    		return null;
+    	}
+    	else
+    	{
+    		System.out.println("M6");
+    		return null;
+    	}
+    	
     }
     
     /**
@@ -72,7 +107,26 @@ public class Vertex<V> {
     	/**
          * TODO: removed an edge
          */
-     	return null;
+    	for(int i = 0; i < this.edgeList.size(); i++)
+    	{
+    		Edge<V> tempEdge = this.edgeList.get(i);
+    		if(tempEdge.getDest().equals(dest))
+    		{
+    			this.edgeList.remove(i);
+    			return tempEdge;
+    		}
+    		
+    	}
+    	
+    	if(this.getEdge(dest).equals(null))
+    	{
+    		System.out.println("M5");
+    		return null;
+    	}
+    	else {
+    		System.out.println("M6");
+    		return null;
+    	}
     }
 
     public boolean equals(Vertex<V> o) { 
@@ -80,7 +134,15 @@ public class Vertex<V> {
 		 * TODO: implement the comparison between two vertices
 		 * IFF `v` and `edgeList` are the same return true
 		 */
-		return false;
+    	if(this.v.equals(o))
+    	{
+    		return true;
+    	}
+    	else
+    	{
+    		return false;
+    	}
+		
 	}
     
     @Override
